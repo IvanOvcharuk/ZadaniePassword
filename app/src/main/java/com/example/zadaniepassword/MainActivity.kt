@@ -6,6 +6,7 @@ import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     lateinit var showHideBtn1: Button;
@@ -47,11 +48,26 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        showHideBtn2.setOnClickListener {
+        var text = "Hasło zapisane";
+        var text1 = "Hasło zgodne";
+        var text2 = "Hasło niezgodne";
+
+        sprawdz1.setOnClickListener {
             pass1 = sprawdz1.text.toString();
+            Toast.makeText(this@MainActivity,text, Toast.LENGTH_LONG).show()
 
         }
+        sprawdz2.setOnClickListener {
+            pass2 = sprawdz2.text.toString();
+            if(pass1 == pass2) {
+                Toast.makeText(this@MainActivity, text1, Toast.LENGTH_LONG).show()
+            }
+            else
+            {
+                Toast.makeText(this@MainActivity, text2, Toast.LENGTH_LONG).show()
+            }
 
+        }
 
 
     }
