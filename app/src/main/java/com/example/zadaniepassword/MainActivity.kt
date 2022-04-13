@@ -53,12 +53,12 @@ class MainActivity : AppCompatActivity() {
         var text2 = "Hasło niezgodne";
 
         sprawdz1.setOnClickListener {
-            pass1 = sprawdz1.text.toString();
+            pass1 = pwd1.text.toString();
             Toast.makeText(this@MainActivity,text, Toast.LENGTH_LONG).show()
 
         }
         sprawdz2.setOnClickListener {
-            pass2 = sprawdz2.text.toString();
+            pass2 = pwd2.text.toString();
             if(pass1 == pass2) {
                 Toast.makeText(this@MainActivity, text1, Toast.LENGTH_LONG).show()
             }
